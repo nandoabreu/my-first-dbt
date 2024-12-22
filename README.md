@@ -29,6 +29,14 @@ and know about its:
 As spoiled, dbt uses [Jinja2](https://jinja.palletsprojects.com/).
 And dbt is installed with pip, how cute! :-)
 
+To run this project as it is, you must have some database available.
+The data we will mock, but the DB and user must be provided to dbt.
+
+I am using Postgres, but dbt and the configuration probably accept MySQL, MariaDB, SQLite3, etc.
+A podman or docker container also can quicly spin up a DB locally and for free.
+
+The following commands should create and activate a virtual environment and install the necessary dependencies.
+
 ```shell
 python -m venv venv
 source venv/bin/activate
@@ -37,7 +45,13 @@ python -m pip install --upgrade -r requirements.txt
 
 ### Mock data
 
-TBD
+I added [this bash script](tests/setup/run.bash) to create a table and mock data in it.
+It uses `psql` to send the commands to Postgres. Database, hostname, schema and table must be set inside
+the file. I did not parametrize this data that will also be used in dbt files, sorry for that.
+
+```shell
+bash tests/setup/run.bash
+```
 
 ## Run
 
