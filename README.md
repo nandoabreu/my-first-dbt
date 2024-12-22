@@ -19,10 +19,21 @@ and know about its:
 - Data flow: source, staging, transformation, target
 - Configuration and Engineering: how it works underneath
 
+> This project is not intended to be a highly professional implementation.
+> Its primary purpose is for learning and to provide some guidance for anyone
+> who might attempt to run this draft.
+
 
 ## Set-up
 
-TBD
+As spoiled, dbt uses [Jinja2](https://jinja.palletsprojects.com/).
+And dbt is installed with pip, how cute! :-)
+
+```shell
+python -m venv venv
+source venv/bin/activate
+python -m pip install --upgrade -r requirements.txt
+```
 
 ### Mock data
 
