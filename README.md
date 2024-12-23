@@ -64,11 +64,20 @@ The script will create a table named "sensor_data" and add mocked network inboun
 | nando | 2024-12-09 08:45:04.000| {"cxn": "wlan", "in": "19232", "out": "17404"}|
 | rpi | 2024-12-09 08:45:04.000| {"cxn": "eth", "in": "9121", "out": "10090"} |
 
-## Configure dbt and run
+## Configure dbt, test and run
 
 dbt uses a few config files to enable running it. The database data must be informed
-in the [profiles.yml](profiles.yml) file, that can be in the project or in the user's home.
+in the [profiles.yml](profiles.yml) file and the [models/sources.yml](models/sources.yml) file must be informed with
+the schema and table to fetch the mocked data. Profiles can also be set in the user's home.
+
+### Test DB connection
+
+```shell
+dbt debug
+```
 
 ### Run
 
-TBD
+```shell
+dbt run #--full-refresh
+```

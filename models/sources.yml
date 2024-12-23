@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: sensor_data_source
+    database: <database-name>
+    schema: public  # Update the schema, if needed
+    tables:
+      - name: sensor_data
+        description: "Sensor data containing network usage"
