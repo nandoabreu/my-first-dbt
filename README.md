@@ -10,7 +10,7 @@ when I was asked:
 ― Do you know Jinja?
 
 For anyone familiar with Python frameworks like FastAPI, Django, or Flask, the name instantly rings a bell!
-After the interview, I asked ChatGPT if dbt used Jinja the way I thought it did. AND IT DID! <3
+After the interview, I asked ChatGPT if dbt uses the same Jinja I thought it does. AND IT DOES! <3
 
 This project represents my weekend/side-project to learn dbt hands-on and understand how it integrates with data workflows.
 My goal is to explore how dbt transforms raw data into analytics-ready datasets through a simple, but structured project
@@ -22,7 +22,6 @@ and know about its:
 > This project is not intended to be a highly professional implementation.
 > Its primary purpose is for learning and to provide some guidance for anyone
 > who might attempt to run this draft.
-
 
 ## Set-up
 
@@ -53,6 +52,23 @@ the file. I did not parametrize this data that will also be used in dbt files, s
 bash tests/setup/run.bash
 ```
 
-## Run
+#### Mocked data
+
+The script will create a table named "sensor_data" and add mocked network inbound and outbound data:
+
+| device (text) | collected_at (timestamp) | net_data (text) |
+|--------|------------------------|-----------------------------------------------|
+| nando | 2024-12-09 08:43:08.000| {"cxn": "wlan", "in": "19041", "out": "17205"}|
+| nando | 2024-12-09 08:44:03.000||
+| rpi | 2024-12-09 08:44:03.000| {"cxn": "eth", "in": "9029", "out": "10013"} |
+| nando | 2024-12-09 08:45:04.000| {"cxn": "wlan", "in": "19232", "out": "17404"}|
+| rpi | 2024-12-09 08:45:04.000| {"cxn": "eth", "in": "9121", "out": "10090"} |
+
+## Configure dbt and run
+
+dbt uses a few config files to enable running it. The database data must be informed
+in the [profiles.yml](profiles.yml) file, that can be in the project or in the user's home.
+
+### Run
 
 TBD

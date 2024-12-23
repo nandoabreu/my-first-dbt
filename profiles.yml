@@ -1,0 +1,14 @@
+my_first_dbt:
+  outputs:
+    dev:
+      schema: my_first_dbt  # Where to persist at
+      password: <database-password>
+      user: <database-user>
+      dbname: <database-name>
+      host: <IP-or-hostname>
+      port: 5432
+      type: postgres
+      threads: 2
+      create: true  # Allow dbt to create the schema
+
+  target: dev
