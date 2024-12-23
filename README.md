@@ -81,3 +81,10 @@ dbt debug
 ```shell
 dbt run #--full-refresh
 ```
+
+#### Document and check
+
+```shell
+dbt docs generate
+dbt docs serve --host 0.0.0.0 --port 8000
+```
